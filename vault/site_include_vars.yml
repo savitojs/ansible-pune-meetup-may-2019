@@ -1,0 +1,16 @@
+---
+- name: Loading variables from the ansible vault
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+#  vars_files:
+#    - "{{ playbook_dir }}/secret-vars.yaml"
+
+  tasks:
+    - name: include variables
+      include_vars: "{{ playbook_dir }}/secret-vars.yaml"
+
+    - name: "List the variables"
+      debug:
+        msg: "User name is {{ username }}, Password is {{ password }}, Domain is {{ domain }}"

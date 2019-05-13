@@ -1,0 +1,11 @@
+---
+- name: Ignore failed commands
+  hosts: local
+  connection: local
+  gather_facts: false
+  
+  tasks:
+    - name: this will not be counted as a failure
+      command: /bin/false
+      ignore_errors: yes
+

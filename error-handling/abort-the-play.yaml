@@ -1,0 +1,23 @@
+---
+- name: Failed output
+  hosts: local
+  connection: local
+  gather_facts: false
+  any_errors_fatal: true
+  
+  tasks:
+    - name: test 
+      shell: /usr/bin/true
+
+    - name: test task
+      command: /usr/bin/true
+
+    - name: test task
+      command: /usr/bin/false
+      ignore_errors: true
+
+    - name: I am last to run here, All abort here
+      command: /usr/bin/false
+
+    - name: I am not being run
+      command: /usr/bin/true

@@ -1,0 +1,4 @@
+#!/bin/bash
+echo "I am going to fail always"
+false || echo "FAILED"
+
