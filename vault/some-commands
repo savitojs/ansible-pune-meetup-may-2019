@@ -1,4 +1,0 @@
-ansible-vault encrypt_string --vault-id dev@vault-password 'secure' --name 'password'
-ansible-playbook --vault-id @prompt site.yml
-ansible-playbook --vault-id @prompt site_include_vars.yml
-export VAULT_PASSWORD=redhat; python -c "import os; print os.environ['VAULT_PASSWORD'] ; unset VAULT_PASSWORD
